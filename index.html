@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CUS311 — The Dlamini Story | African Customary Law</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f9f8f6;
+    --surface: #ffffff;
+    --border: rgba(0,0,0,0.08);
+    --border-strong: rgba(0,0,0,0.15);
+    --text: #1a1a1a;
+    --text-muted: #6b6b6b;
+    --text-light: #9a9a9a;
+    --accent: #1a1a1a;
+    --radius: 14px;
+    --radius-sm: 8px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* ─── HEADER ─── */
+  .site-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+  .header-logo {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 17px;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: -0.2px;
+  }
+  .header-nav {
+    display: flex;
+    gap: 6px;
+  }
+  .nav-btn {
+    background: none;
+    border: 1px solid var(--border-strong);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .nav-btn:hover { background: var(--text); color: white; border-color: var(--text); }
+
+  /* ─── HERO ─── */
+  .hero {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 56px 20px 48px;
+  }
+  .hero-tag {
+    display: inline-block;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: clamp(32px, 6vw, 52px);
+    line-height: 1.12;
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+    color: var(--text);
+  }
+  .hero h1 em { font-style: italic; }
+  .hero-sub {
+    font-size: 17px;
+    color: var(--text-muted);
+    max-width: 520px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+  }
+  .hero-meta {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+  .meta-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--text-muted);
+  }
+  .progress-bar-wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 20px 12px;
+  }
+  .progress-bar {
+    height: 2px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: var(--text);
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 2px;
+  }
+
+  /* ─── MAIN CONTENT ─── */
+  .main {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 16px;
+    margin-top: 48px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* ─── CHAPTER CARDS ─── */
+  .chapter-list { display: flex; flex-direction: column; gap: 1px; }
+
+  .chapter-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+    margin-bottom: 8px;
+  }
+  .chapter-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+
+  .chapter-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 24px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .chapter-num {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: white;
+    flex-shrink: 0;
+    text-transform: uppercase;
+  }
+
+  .chapter-meta { flex: 1; min-width: 0; }
+  .chapter-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 2px;
+  }
+  .chapter-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: 19px;
+    line-height: 1.2;
+    color: var(--text);
+    letter-spacing: -0.2px;
+  }
+  .chapter-subtitle {
+    font-size: 12.5px;
+    color: var(--text-light);
+    margin-top: 3px;
+  }
+
+  .chapter-arrow {
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.25s ease, background 0.15s;
+  }
+  .chapter-arrow svg { transition: transform 0.25s ease; }
+  .chapter-card.open .chapter-arrow svg { transform: rotate(180deg); }
+  .chapter-card.open .chapter-arrow { background: var(--text); border-color: var(--text); }
+  .chapter-card.open .chapter-arrow svg path { stroke: white; }
+
+  .chapter-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
+  }
+  .chapter-body-inner {
+    padding: 0 24px 28px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ─── READING CONTENT STYLES ─── */
+  .chapter-body-inner p { margin-bottom: 16px; color: var(--text); }
+  .chapter-body-inner p:last-child { margin-bottom: 0; }
+  .chapter-body-inner h3 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 20px;
+    margin: 28px 0 12px;
+    color: var(--text);
+    letter-spacing: -0.2px;
+  }
+  .chapter-body-inner h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 20px 0 8px;
+    color: var(--text);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .chapter-body-inner ul, .chapter-body-inner ol {
+    padding-left: 20px;
+    margin-bottom: 16px;
+  }
+  .chapter-body-inner li { margin-bottom: 6px; }
+  .chapter-body-inner strong { font-weight: 600; }
+  .chapter-body-inner em { font-style: italic; }
+
+  .value-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    margin-bottom: 10px;
+  }
+  .value-num {
+    width: 32px;
+    height: 32px;
+    background: var(--text);
+    color: white;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    flex-shrink: 0;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .callout {
+    background: #f0f0f0;
+    border-left: 3px solid var(--text);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 18px;
+    margin: 20px 0;
+    font-size: 14.5px;
+    line-height: 1.6;
+  }
+  .citation {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 16px;
+  }
+
+
+  /* ─── CHAPTER TEXT TO SPEECH ─── */
+  .tts-controls {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 16px 0 20px;
+  }
+
+  .tts-btn {
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    border-radius: 20px;
+    padding: 7px 14px;
+    font-size: 13px;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .tts-btn:hover {
+    background: var(--text);
+    color: white;
+    border-color: var(--text);
+  }
+
+  .tts-btn.speaking {
+    background: var(--text);
+    color: white;
+    border-color: var(--text);
+  }
+
+  /* ─── CASE LAW SECTION ─── */
+  .case-filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .filter-btn {
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 13px;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .filter-btn.active, .filter-btn:hover {
+    background: var(--text);
+    color: white;
+    border-color: var(--text);
+  }
+
+  .case-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+  }
+
+  .case-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .case-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 100%;
+  }
+  .case-card.imp-highest::before { background: #ef4444; }
+  .case-card.imp-high::before { background: #f59e0b; }
+  .case-card.imp-medium::before { background: #6b6b6b; }
+  .case-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.1); transform: translateY(-1px); }
+
+  .case-topic-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .case-name-text {
+    font-family: 'Instrument Serif', serif;
+    font-size: 16px;
+    line-height: 1.3;
+    color: var(--text);
+    margin-bottom: 4px;
+    letter-spacing: -0.1px;
+  }
+  .case-citation-text {
+    font-size: 11.5px;
+    color: var(--text-light);
+    font-style: italic;
+  }
+  .case-imp-badge {
+    position: absolute;
+    top: 16px; right: 16px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+  .case-card.imp-highest .case-imp-badge { background: #fee2e2; color: #991b1b; }
+  .case-card.imp-high .case-imp-badge { background: #fef3c7; color: #92400e; }
+  .case-card.imp-medium .case-imp-badge { background: #f3f4f6; color: #4b5563; }
+
+  /* ─── MODAL ─── */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 1000;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    padding: 0;
+  }
+  .modal-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .modal {
+    background: var(--surface);
+    border-radius: 20px 20px 0 0;
+    width: 100%;
+    max-width: 680px;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: translateY(40px);
+    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+    -webkit-overflow-scrolling: touch;
+  }
+  .modal-overlay.open .modal { transform: translateY(0); }
+
+  .modal-handle {
+    width: 36px; height: 4px;
+    background: var(--border-strong);
+    border-radius: 2px;
+    margin: 12px auto 0;
+  }
+  .modal-header {
+    padding: 20px 24px 16px;
+    position: sticky;
+    top: 0;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    z-index: 1;
+  }
+  .modal-close {
+    position: absolute;
+    top: 16px; right: 20px;
+    width: 32px; height: 32px;
+    border: 1px solid var(--border-strong);
+    border-radius: 50%;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: var(--text);
+    transition: background 0.15s;
+  }
+  .modal-close:hover { background: var(--bg); }
+  .modal-body {
+    padding: 24px 24px 40px;
+  }
+  .modal-body h3 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 22px;
+    margin-bottom: 6px;
+    letter-spacing: -0.3px;
+  }
+  .modal-body h4 {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 20px 0 8px;
+    color: var(--text);
+  }
+  .modal-body p { margin-bottom: 12px; font-size: 15px; line-height: 1.65; }
+  .modal-body ul, .modal-body ol { padding-left: 20px; margin-bottom: 14px; }
+  .modal-body li { margin-bottom: 5px; font-size: 15px; line-height: 1.6; }
+  .modal-body strong { font-weight: 600; }
+  .modal-body em { font-style: italic; color: var(--text-muted); }
+  .citation { font-size: 13px; color: var(--text-muted); font-style: italic; margin-bottom: 16px; }
+
+  /* ─── FUNNLR AD ─── */
+  .funnlr-section {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+  }
+  .funnlr-wrap {
+    background: #0f0f0f;
+    border-radius: 24px;
+    overflow: hidden;
+    color: white;
+  }
+  .funnlr-top {
+    padding: 40px 36px 32px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .funnlr-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 4px 12px 4px 8px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 20px;
+  }
+  .funnlr-eyebrow-dot {
+    width: 6px; height: 6px;
+    background: #4ade80;
+    border-radius: 50%;
+    animation: pulse 2s ease infinite;
+  }
+  @keyframes pulse {
+    0%,100% { opacity:1; } 50% { opacity:0.4; }
+  }
+  .funnlr-headline {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(26px, 5vw, 38px);
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    color: #fff;
+    margin-bottom: 14px;
+  }
+  .funnlr-headline em { font-style: italic; color: rgba(255,255,255,0.5); }
+  .funnlr-subline {
+    font-size: 15px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+    max-width: 460px;
+    margin-bottom: 28px;
+  }
+  .funnlr-cta-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .funnlr-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: #ffffff;
+    color: #0f0f0f;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 11px 22px;
+    border-radius: 25px;
+    transition: opacity 0.15s;
+    font-family: 'DM Sans', sans-serif;
+    letter-spacing: -0.1px;
+  }
+  .funnlr-cta:hover { opacity: 0.88; }
+  .funnlr-cta svg { width: 13px; height: 13px; }
+  .funnlr-cta-secondary {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    font-family: 'DM Sans', sans-serif;
+  }
+  .funnlr-services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+  .funnlr-service {
+    padding: 24px 28px;
+    border-right: 1px solid rgba(255,255,255,0.07);
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+  .funnlr-service:last-child { border-right: none; }
+  .funnlr-service-icon {
+    width: 36px; height: 36px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    margin-bottom: 12px;
+  }
+  .funnlr-service-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 6px;
+    letter-spacing: -0.1px;
+  }
+  .funnlr-service-desc {
+    font-size: 12px;
+    color: rgba(255,255,255,0.38);
+    line-height: 1.55;
+  }
+  .funnlr-flow {
+    padding: 20px 28px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    display: flex;
+    align-items: center;
+    gap: 0;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .flow-step {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+  }
+  .flow-label {
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.45);
+    font-weight: 500;
+  }
+  .flow-arrow {
+    font-size: 12px;
+    color: rgba(255,255,255,0.18);
+    margin: 0 6px;
+  }
+  .flow-step.active .flow-label { color: #4ade80; }
+  .funnlr-bottom {
+    padding: 16px 28px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .funnlr-wordmark {
+    font-family: 'Instrument Serif', serif;
+    font-size: 15px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: -0.2px;
+  }
+  .funnlr-tag {
+    font-size: 11px;
+    color: rgba(255,255,255,0.25);
+    font-family: 'DM Sans', sans-serif;
+  }
+  @media (max-width: 560px) {
+    .funnlr-services { grid-template-columns: 1fr; }
+    .funnlr-service { border-right: none; }
+    .funnlr-top { padding: 28px 22px 24px; }
+    .funnlr-service { padding: 18px 22px; }
+    .funnlr-flow { padding: 16px 22px; }
+    .funnlr-bottom { padding: 14px 22px; }
+  }
+  .funnlr-cta-old {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #1a1a1a;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: opacity 0.15s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .funnlr-cta-old:hover { opacity: 0.85; }
+  .funnlr-cta-old svg { width: 14px; height: 14px; }
+
+  @media (max-width: 520px) {
+    .funnlr-card { flex-direction: column; align-items: flex-start; gap: 20px; padding: 24px 20px; }
+    .case-grid { grid-template-columns: 1fr; }
+    .header-nav .nav-btn:not(:last-child) { display: none; }
+    .hero { padding: 36px 20px 32px; }
+    .chapter-header { padding: 16px 18px; }
+    .chapter-body-inner { padding: 0 18px 22px; }
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    text-align: center;
+    padding: 24px 20px;
+    font-size: 12px;
+    color: var(--text-light);
+    border-top: 1px solid var(--border);
+  }
+
+  /* smooth reveal animation */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .chapter-card { animation: fadeUp 0.4s ease both; }
+
+  /* ─── ADMIN TRIGGER ─── */
+  .admin-trigger {
+    background: none; border: none;
+    font-size: 11px; color: rgba(255,255,255,0.15);
+    cursor: pointer; font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0.04em; padding: 4px 8px;
+    border-radius: 4px; transition: color 0.2s;
+  }
+  .admin-trigger:hover { color: rgba(255,255,255,0.45); }
+
+  /* ─── ADMIN GATE ─── */
+  .admin-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.5); z-index: 2000;
+    display: flex; align-items: flex-end; justify-content: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.25s ease;
+  }
+  .admin-overlay.open { opacity: 1; pointer-events: auto; }
+  .admin-gate {
+    background: #fff; border-radius: 20px 20px 0 0;
+    width: 100%; max-width: 440px;
+    transform: translateY(30px);
+    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+  }
+  .admin-overlay.open .admin-gate { transform: translateY(0); }
+  .admin-handle { width: 36px; height: 4px; background: #e0e0e0; border-radius: 2px; margin: 12px auto 0; }
+  .admin-gate-inner { padding: 20px 28px 36px; text-align: center; }
+  .admin-lock-icon { font-size: 36px; margin-bottom: 12px; }
+  .admin-gate-title { font-family: 'Instrument Serif', serif; font-size: 22px; color: #1a1a1a; margin-bottom: 6px; }
+  .admin-gate-sub { font-size: 13px; color: #9a9a9a; margin-bottom: 20px; }
+  .admin-code-input {
+    width: 100%; border: 1.5px solid #e0e0e0; border-radius: 10px;
+    padding: 12px 16px; font-size: 16px; font-family: 'DM Sans', sans-serif;
+    outline: none; text-align: center; letter-spacing: 0.1em;
+    transition: border-color 0.2s; margin-bottom: 8px;
+  }
+  .admin-code-input:focus { border-color: #1a1a1a; }
+  .admin-code-input.shake {
+    animation: shake 0.4s ease;
+    border-color: #ef4444;
+  }
+  @keyframes shake {
+    0%,100% { transform: translateX(0); }
+    20% { transform: translateX(-8px); }
+    40% { transform: translateX(8px); }
+    60% { transform: translateX(-5px); }
+    80% { transform: translateX(5px); }
+  }
+  .admin-error { font-size: 12px; color: #ef4444; margin-bottom: 14px; min-height: 18px; }
+  .admin-submit-btn {
+    width: 100%; background: #1a1a1a; color: white; border: none;
+    border-radius: 25px; padding: 13px; font-size: 15px; font-weight: 500;
+    font-family: 'DM Sans', sans-serif; cursor: pointer; transition: opacity 0.15s;
+  }
+  .admin-submit-btn:hover { opacity: 0.85; }
+  .admin-submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  /* ─── VAULT ─── */
+  .vault-header {
+    background: #1a1a1a; border-radius: 16px; margin-bottom: 16px;
+  }
+  .vault-header-inner {
+    padding: 20px 24px; display: flex; align-items: center;
+    justify-content: space-between; gap: 16px;
+  }
+  .vault-title-row { display: flex; align-items: center; gap: 14px; }
+  .vault-lock-open { font-size: 28px; }
+  .vault-heading { font-family: 'Instrument Serif', serif; font-size: 22px; color: white; }
+  .vault-subheading { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 2px; }
+  .vault-lock-btn {
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.6); border-radius: 20px; padding: 7px 16px;
+    font-size: 13px; font-family: 'DM Sans', sans-serif; cursor: pointer;
+    transition: all 0.15s; flex-shrink: 0;
+  }
+  .vault-lock-btn:hover { background: rgba(255,255,255,0.2); color: white; }
+  .vault-block {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 28px; margin-bottom: 16px;
+  }
+  .vault-block-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--text-light); margin-bottom: 6px;
+  }
+  .vault-block-title {
+    font-family: 'Instrument Serif', serif; font-size: 24px;
+    color: var(--text); margin-bottom: 20px; letter-spacing: -0.3px;
+  }
+  .vault-sub {
+    font-size: 12px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.07em; color: var(--text-light);
+    margin: 22px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border);
+  }
+  .vault-alert {
+    background: #fefce8; border: 1px solid #fde68a; border-radius: 10px;
+    padding: 14px 16px; font-size: 14px; line-height: 1.6;
+    color: #78350f; margin-bottom: 16px;
+  }
+  .vault-p { font-size: 14.5px; line-height: 1.7; color: var(--text); margin-bottom: 10px; }
+  .vault-p-block { margin-bottom: 10px; }
+  .vault-item-card {
+    display: flex; align-items: flex-start; gap: 12px;
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 8px; padding: 12px 14px; margin-bottom: 8px; font-size: 14px; line-height: 1.6;
+  }
+  .vic-num {
+    flex-shrink: 0; min-width: 28px; height: 28px;
+    background: #1a1a1a; color: white; border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 600; font-family: 'DM Sans', sans-serif;
+  }
+  .vault-table {
+    width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 12px;
+  }
+  .vault-table th {
+    background: var(--bg); padding: 10px 12px; text-align: left;
+    font-size: 11px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.06em; color: var(--text-muted); border-bottom: 1px solid var(--border);
+  }
+  .vault-table td {
+    padding: 10px 12px; border-bottom: 0.5px solid var(--border);
+    vertical-align: top; line-height: 1.55;
+  }
+  .vault-table tr:last-child td { border-bottom: none; }
+  .vault-q-header {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.07em;
+    text-transform: uppercase; color: #C0392B; margin-bottom: 10px;
+  }
+  .vault-q-box {
+    background: #f9f8f6; border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px; font-size: 14.5px; font-style: italic;
+    line-height: 1.7; margin-bottom: 12px; color: var(--text);
+  }
+  .vault-a-toggle {
+    font-size: 13px; font-weight: 500; color: var(--text-muted);
+    cursor: pointer; padding: 10px 0; user-select: none;
+    border-bottom: 1px solid var(--border); margin-bottom: 12px; transition: color 0.15s;
+  }
+  .vault-a-toggle:hover { color: var(--text); }
+  .vault-answer { display: none; padding: 16px; background: var(--bg); border-radius: 10px; border: 1px solid var(--border); margin-bottom: 8px; }
+  .vault-answer.open { display: block; }
+
+
+
+  /* ─── EXAM ASSISTANT WIDGET ─── */
+  .exam-assistant-btn {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    z-index: 999;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .exam-assistant-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  }
+
+  .exam-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    z-index: 1000;
+    overflow-y: auto;
+    animation: fadeIn 0.2s;
+  }
+  .exam-modal.active { display: flex; }
+
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  .exam-modal-content {
+    background: var(--surface);
+    width: 100%;
+    max-width: 900px;
+    margin: 32px auto;
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  }
+
+  .exam-header {
+    padding: 24px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .exam-header h2 {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 24px;
+    margin: 0;
+  }
+  .exam-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-light);
+    transition: color 0.2s;
+  }
+  .exam-close:hover { color: var(--text); }
+
+  .exam-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .exam-panel {
+    display: flex;
+    flex-direction: column;
+  }
+  .exam-panel h3 {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-light);
+    margin-bottom: 12px;
+  }
+
+  .exam-textarea {
+    flex: 1;
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    resize: none;
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .exam-textarea:focus {
+    outline: none;
+    border-color: var(--text);
+  }
+
+  .exam-guidelines {
+    background: #fafaf9;
+    padding: 16px;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  .exam-guidelines strong {
+    color: var(--text);
+    display: block;
+    margin: 12px 0 6px 0;
+  }
+  .exam-guidelines ul {
+    list-style: none;
+    margin-left: 0;
+  }
+  .exam-guidelines li {
+    margin: 6px 0;
+    padding-left: 16px;
+    position: relative;
+  }
+  .exam-guidelines li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+  }
+
+  .exam-footer {
+    padding: 24px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 12px;
+  }
+  .exam-btn {
+    flex: 1;
+    padding: 12px 20px;
+    border-radius: var(--radius-sm);
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .exam-btn-primary {
+    background: var(--text);
+    color: white;
+  }
+  .exam-btn-primary:hover { background: #333; }
+  .exam-btn-primary:disabled {
+    background: var(--text-light);
+    cursor: not-allowed;
+  }
+  .exam-btn-secondary {
+    background: var(--border);
+    color: var(--text);
+  }
+  .exam-btn-secondary:hover { background: var(--border-strong); }
+
+  .exam-status {
+    font-size: 13px;
+    color: var(--text-muted);
+    padding: 8px 0;
+    text-align: center;
+    min-height: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .exam-body { grid-template-columns: 1fr; }
+    .exam-assistant-btn { bottom: 20px; right: 20px; }
+    .exam-modal-content { margin: 16px; max-height: 95vh; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#" class="header-logo">CUS311 × Dlamini</a>
+    <nav class="header-nav">
+      <a href="#chapters" class="nav-btn">Chapters</a>
+      <a href="#caselaw" class="nav-btn">Case Law</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="hero-tag">UWC · African Customary Law 311 · 2026</span>
+  <h1>The Story of the<br><em>Dlamini Family</em></h1>
+  <p class="hero-sub">Your entire CUS311 module told as one story. Characters are fictional. Every law, case, and principle is real. Read this first — then revise.</p>
+  <div class="hero-meta">
+    <div class="meta-item"><div class="meta-dot"></div>12 Chapters</div>
+    <div class="meta-item"><div class="meta-dot"></div>17 Cases</div>
+    <div class="meta-item"><div class="meta-dot"></div>Works on your phone</div>
+  </div>
+</section>
+
+<div class="progress-bar-wrap">
+  <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+</div>
+
+<!-- CHAPTERS -->
+<main class="main">
+  <div class="section-label" id="chapters">The Story — 12 Chapters</div>
+  <div class="chapter-list" id="chapterList"></div>
+</main>
+
+<!-- CASE LAW -->
+<section class="main" style="padding-top:0">
+  <div class="section-label" id="caselaw">Case Law Library — Tap any case to read the full summary</div>
+  <div class="case-filters">
+    <button class="filter-btn active" data-filter="all">All cases</button>
+    <button class="filter-btn" data-filter="highest">⭐ Must know</button>
+    <button class="filter-btn" data-filter="Succession">Succession</button>
+    <button class="filter-btn" data-filter="Customary Marriage — RCMA">Marriage</button>
+    <button class="filter-btn" data-filter="Traditional Leadership">Leadership</button>
+    <button class="filter-btn" data-filter="Matrimonial Property">Property</button>
+  </div>
+  <div class="case-grid" id="caseGrid"></div>
+</section>
+
+<!-- FUNNLR AD -->
+<section class="funnlr-section">
+  <div class="section-label">Built by</div>
+  <div class="funnlr-wrap">
+
+    <!-- TOP: Headline + CTA -->
+    <div class="funnlr-top">
+      <div class="funnlr-eyebrow">
+        <div class="funnlr-eyebrow-dot"></div>
+        South Africa's Funnel & Automation Agency
+      </div>
+      <div class="funnlr-headline">
+        Stop posting and hoping.<br><em>Start getting customers automatically.</em>
+      </div>
+      <div class="funnlr-subline">
+        Funnlr builds mini-funnels, WhatsApp AI chatbots, and landing pages that turn your social media traffic into actual paying customers — on autopilot.
+      </div>
+      <div class="funnlr-cta-row">
+        <a href="https://funnlr.co.za" target="_blank" class="funnlr-cta">
+          Start with Funnlr
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+        <span class="funnlr-cta-secondary">funnlr.co.za</span>
+      </div>
+    </div>
+
+    <!-- THE FUNNEL FLOW -->
+    <div class="funnlr-flow">
+      <div class="flow-step"><div class="flow-label">Instagram post</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><div class="flow-label">Landing page</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step active"><div class="flow-label">WhatsApp bot</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step active"><div class="flow-label">Qualified lead</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step active"><div class="flow-label">💰 Customer</div></div>
+    </div>
+
+    <!-- THREE SERVICES -->
+    <div class="funnlr-services">
+      <div class="funnlr-service">
+        <div class="funnlr-service-icon">⚡</div>
+        <div class="funnlr-service-title">Mini Funnels</div>
+        <div class="funnlr-service-desc">Guided customer journeys from interest to payment. No confusion, no drop-off — just a clear path to conversion.</div>
+      </div>
+      <div class="funnlr-service">
+        <div class="funnlr-service-icon">🤖</div>
+        <div class="funnlr-service-title">WhatsApp AI Chatbots</div>
+        <div class="funnlr-service-desc">Replies automatically, answers FAQs, qualifies leads, books appointments, and sends links — 24/7 without you lifting a finger.</div>
+      </div>
+      <div class="funnlr-service">
+        <div class="funnlr-service-icon">🚀</div>
+        <div class="funnlr-service-title">Landing Pages</div>
+        <div class="funnlr-service-desc">Fast, modern sales and offer pages built in React and Next.js. Not just pretty — built to convert visitors into buyers.</div>
+      </div>
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="funnlr-bottom">
+      <div class="funnlr-wordmark">funnlr</div>
+      <div class="funnlr-tag">Funnels · WhatsApp Automation · AI Chatbots · Landing Pages · Lead Systems</div>
+      <button onclick="openAdminGate()" class="admin-trigger">admin</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ADMIN GATE -->
+<div class="admin-overlay" id="adminOverlay" onclick="closeAdminGate(event)">
+  <div class="admin-gate" id="adminGate">
+    <div class="admin-handle"></div>
+    <div class="admin-gate-inner">
+      <div class="admin-lock-icon">🔒</div>
+      <div class="admin-gate-title">Private Access</div>
+      <div class="admin-gate-sub">Enter your access code to continue</div>
+      <input type="password" id="adminCodeInput" class="admin-code-input" placeholder="Enter code" onkeydown="if(event.key==='Enter') submitAdminCode()" autocomplete="off" spellcheck="false"/>
+      <div class="admin-error" id="adminError">Incorrect code. Try again.</div>
+      <button class="admin-submit-btn" onclick="submitAdminCode()">
+        <span id="submitBtnText">Unlock</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- VAULT CONTAINER — empty on load, filled by API after correct password -->
+<div id="vaultSection" style="display:none;">
+  <section class="main vault-section" style="padding-top:0;padding-bottom:60px;">
+    <div id="vaultContent">
+      <!-- Content injected here by JavaScript after API call -->
+    </div>
+  </section>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+    <div class="modal-handle"></div>
+    <div class="modal-header">
+      <div id="modalTitle" style="font-family:'Instrument Serif',serif;font-size:15px;padding-right:40px;color:var(--text-muted);"></div>
+      <button class="modal-close" onclick="closeModalBtn()">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<footer>CUS311 African Customary Law · UWC 2026 · Built by <a href="https://funnlr.co.za" target="_blank" style="color:var(--text-muted);text-decoration:underline;text-underline-offset:2px;">funnlr.co.za</a></footer>
+
+<script>
+// ─── CHAPTER DATA ───
+const chapters = [
+  { id:'prologue', label:'Prologue', title:'Before We Begin', subtitle:'What this module is really about', color:'#6366f1',
+    content:`<p>Imagine you are standing in a village. Not a small, poor village — a thriving community of families who have lived together for generations. There are cattle. There are fields. There are elders who remember the old ways. There are young people who have been to the city and come back changed.</p><p>This village has rules. Not written rules. Not rules from a government building in Pretoria. Rules that come from the people themselves — from how they live, how they love, how they fight, how they die, and what they leave behind.</p><p>These rules are <strong>indigenous law</strong>. The story of what happened to those rules — when a foreign power arrived, when democracy came, when courts got involved — that is the story of <strong>African Customary Law</strong>.</p><p>Meet the <strong>Dlamini family</strong>. They have lived in the Eastern Cape for more than two hundred years. Their great-great-grandfather was a homestead head. Their grandfather was a migrant worker. Their father married three wives. And now, their children are law students at UWC arguing about constitutional rights.</p><div class="callout">📖 Characters are fictional. Every law, court case, section number, and legal principle described is <em>real</em>. By the time you finish reading, you will understand African Customary Law.</div>` },
+
+  { id:'ch1', label:'Chapter 1', title:'The Village Before the Lawyers Came', subtitle:'Foundational Values of Indigenous Law — Week 2', color:'#0ea5e9',
+    content:`<p>The head of the homestead was <strong>Baba Dlamini</strong> — a man of about sixty, respected and loved in equal measure. He had three wives, eleven children, and more cattle than anyone in the village. But he did not own any of it alone. The cattle were the family's cattle. The land was the community's land. This is <strong>Ubuntu</strong>.</p><p>Ubuntu comes from the isiZulu <em>umuntu ngumuntu ngabantu</em> — a person is a person because of other persons. Or in Sesotho: <em>motho ke motho ka batho ba bang</em>. You are not complete by yourself. Your identity is wrapped up in your community. Affirmed as a constitutional value in <em>S v Makwanyane</em>.</p><h3>The Five Values That Ran Everything</h3><div class="value-card"><div class="value-num">1</div><div><strong>Ubuntu</strong> — welfare of the clan comes first. No one goes hungry while others feast.</div></div><div class="value-card"><div class="value-num">2</div><div><strong>Best interest of the family</strong> — heir inherits responsibilities, not just cattle. He must feed his mother, educate siblings, maintain the homestead. Inheritance was a burden carried with pride.</div></div><div class="value-card"><div class="value-num">3</div><div><strong>Preservation of the ancestral home</strong> — the Dlamini homestead was a spiritual site. Ancestors were buried nearby. This value explains why male primogeniture existed — someone had to <em>stay</em> and maintain that sacred place.</div></div><div class="value-card"><div class="value-num">4</div><div><strong>Family involvement in marriage</strong> — Sipho's father went to Nomsa's father. Two families negotiated. They discussed lobolo — not as a purchase price, but as a sealing of an alliance between two families.</div></div><div class="value-card"><div class="value-num">5</div><div><strong>Fair trade</strong> — Chief Gboteyi said in 1912: "I conceive that land belongs to a vast family of which many are dead, few are living, and countless members are unborn." Land was not a commodity.</div></div><div class="callout">⭐ Prof Diala's entire argument rests on these values. When courts strike down CL rules without understanding <em>why</em> they existed, they commit jurispathic regulation. Male primogeniture was about preserving the home and caring for everyone — worth <em>developing</em>, not just destroying.</div>` },
+
+  { id:'ch2', label:'Chapter 2', title:'The Day the Colonisers Arrived', subtitle:'Historical Recognition of CL — Week 3', color:'#f59e0b',
+    content:`<p>In 1652, Jan van Riebeeck arrived at the Cape. And nothing was ever the same again. The colonisers brought a legal system from a world of factories and private property — alien to Africa's agrarian, communal societies.</p><h3>The Repugnancy Test: The First Weapon</h3><p>The colonisers said: <em>"We will recognise your customs — but only if they do not contravene public policy, natural justice, equity, good conscience, or any written law."</em> This was the <strong>repugnancy test</strong>. Who decided what was repugnant? European judges trained in European law.</p><h3>The Black Administration Act 1927</h3><p><strong>Section 11(3) BAA</strong> — a woman in a customary marriage was a <strong>perpetual minor</strong>. No property. No contracts. No court access. This was not traditional African law — it was a colonial distortion.</p><p><strong>Section 23 BAA</strong> — when a Black person died without a will, their estate devolved by male primogeniture. Daughters got nothing.</p><h3>The 1996 Constitution</h3><ul><li><strong>s30 and 31:</strong> Right to culture</li><li><strong>s211(3):</strong> Courts must apply CL, subject to the Constitution</li><li><strong>s39(2):</strong> When developing CL, promote spirit, purport and objects of BoR</li></ul><p>Note the critical word: <strong>"subject to."</strong> Prof Diala asks: has anything really changed? The repugnancy test said recognise customs unless they contravene European moral standards. The Constitution says recognise customs unless they contravene the BoR. Same idea. Different words.</p><h3>Two Ways Courts Develop CL — Know These</h3><div class="value-card"><div class="value-num">A</div><div><strong>Active development (Lehnert)</strong> — create a new rule by reformulating existing CL</div></div><div class="value-card"><div class="value-num">B</div><div><strong>Passive development (Lehnert)</strong> — recognise current community practices as binding rules</div></div><div class="value-card"><div class="value-num">C</div><div><strong>Strong interpretation (Himonga & Bosch)</strong> — declare CL rule inconsistent with Constitution and strike it down</div></div><div class="value-card"><div class="value-num">D</div><div><strong>Second interpretation (Himonga & Bosch)</strong> — adapt the rule to bring it in conformity with the BoR</div></div>` },
+
+  { id:'ch3', label:'Chapter 3', title:'The Court and the Constitution Collide', subtitle:'CL and the Bill of Rights — Week 4', color:'#ec4899',
+    content:`<p>Zanele explains it to her brother Thabo: <em>"The Bill of Rights says everyone is equal. But these rights come from a Western tradition. They assume the individual is the basic unit of society. In our law, the basic unit is the family. So when a court measures our customs against these rights, it is like measuring a mango with a ruler designed for apples."</em></p><h3>Universalism</h3><p>Universalism says human rights are universal — the same for everyone everywhere, regardless of culture. The BoR embodies this. The UDHR (1948), ICCPR (1966), ICESCR (1966) — all modelled on European values and presented as universal.</p><p>Prof Diala calls the judicial result <strong>jurispathic</strong> regulation — judges destroy indigenous meanings of law by forcing it through a constitutional sieve. They strip the rule from its context, judge it by foreign standards, and either strike it down or reshape it into something unrecognisable.</p><h3>Cultural Relativism</h3><p>Franz Boas: a person's worldview can only be judged from within their own cultural context.</p><div class="value-card"><div class="value-num">💪</div><div><strong>Strong cultural relativism</strong> — culture is the primary source of validity. Universal human rights can only serve as a minor check.</div></div><div class="value-card"><div class="value-num">🤝</div><div><strong>Weak cultural relativism</strong> — culture matters, but universal human rights create minimum standards. Local variations allowed within limits.</div></div><div class="callout">📝 <strong>For exam essays:</strong> Build on three pillars: (1) Historical context — repugnancy test became BoR, same idea. (2) The debate — universalism (judges) vs cultural relativism (Diala's critique). (3) Case law — Bhe, Shilubana, Mayelane. Then add your own view. The lecturer wants you to have a position.</div>` },
+
+  { id:'ch4', label:'Chapter 4', title:'The Wedding', subtitle:'Customary Marriage & RCMA — Weeks 5, 6, 7', color:'#10b981',
+    content:`<p><strong>Sipho Dlamini</strong> wants to marry <strong>Nomsa</strong>. The question is: what law governs this marriage? The answer is the <strong>Recognition of Customary Marriages Act 120 of 1998 (RCMA)</strong>.</p><h3>Why Was the RCMA Needed?</h3><p>Before 1994, customary wives were legal nobodies. If your husband died, you had no property rights. If he married civilly while you were his customary wife, your marriage became void. The BAA s11(3) made wives perpetual minors. The RCMA changed all of this.</p><h3>Pre-RCMA vs Post-RCMA Requirements</h3><div class="value-card"><div class="value-num">📅</div><div><strong>Pre-RCMA (before 15 Nov 2000) — s2(1) & (3):</strong> Consent of parties · Lobolo agreement · Formal integration of bride · Father's consent · No prohibited degrees · No existing civil marriage</div></div><div class="value-card"><div class="value-num">📅</div><div><strong>Post-RCMA (after 15 Nov 2000) — s3(1):</strong> (1) Both parties 18+ · (2) Both parties consent · (3) Marriage negotiated/celebrated in accordance with CL — this is s3(1)(b)</div></div><h3>What Does s3(1)(b) Mean in Court?</h3><div class="value-card"><div class="value-num">1</div><div><strong>Lobolo:</strong> <em>Mabena v Letsoalo (1998)</em> — mother (not father) negotiated lobolo; court upheld marriage. CL is flexible. The core is that negotiations happened.</div></div><div class="value-card"><div class="value-num">2</div><div><strong>Formal integration:</strong> <em>Tsambo v Sengadi (2020 SCA)</em> — relevant but NOT absolute. <em>Mbungela v Mkabi (2020 SCA)</em> — not required for all communities. <em>Mabuza v Mbatha (2003)</em> — substance over formalism.</div></div><div class="value-card"><div class="value-num">3</div><div><strong>First wife's consent:</strong> <em>Mayelane v Ngwenyama (2013 CC)</em> — among the Tsonga, first wife's consent IS required for a second CL marriage to be valid. Note: community-specific.</div></div><h3>Registration, Dual Marriages & Polygyny</h3><ul><li><strong>Registration:</strong> NOT required for validity — <em>Manwadu v Manwadu (2025 SCA)</em></li><li><strong>Dual marriage:</strong> Spouse in CL marriage CANNOT marry civilly with another person — s3(2) read with s10(4); <em>Mashisane v Mhlauli (2023 SCA)</em></li><li><strong>Polygyny s7(6):</strong> Court-approved written contract required before further CL marriage. BUT — <em>MM v MN (2013 CC)</em>: s7(6) failure does NOT invalidate the subsequent marriage. Property consequences only.</li></ul><h3>Status of Wives After RCMA</h3><p>BAA s11(3): perpetual minor. <strong>s6 RCMA:</strong> full legal status equal to husband — to acquire/dispose assets, enter contracts, litigate.</p><div class="callout">🎓 <strong>Actual exam question from your slides:</strong> "Using at least 5 court cases, discuss how courts are resolving the conflict between section 3(1)(b) of the RCMA and the Constitution." Use: Mabena, Tsambo, Mbungela, Mabuza, Mayelane, Manwadu.</div>` },
+
+  { id:'ch5', label:'Chapter 5', title:'What Sipho and Nomsa Own', subtitle:'Proprietary Consequences — Weeks 7 & 8', color:'#8b5cf6',
+    content:`<p>Sipho and Nomsa married in 2022. They have a house, savings, and cattle. If their marriage breaks down — who gets what?</p><h3>Three Categories of Property Under Traditional CL</h3><div class="value-card"><div class="value-num">🏠</div><div><strong>Family (general) property</strong> — not allocated to any house. Family head controls but does not own it. The whole family has a share.</div></div><div class="value-card"><div class="value-num">🏡</div><div><strong>House property</strong> — accrues to a specific house (wife + children). Includes earnings, lobolo for daughters, livestock allocated to that house. Family head controls; must consult wife and eldest son.</div></div><div class="value-card"><div class="value-num">👤</div><div><strong>Personal property</strong> — belongs to the individual. Can dispose freely; family head consulted (moral obligation only). Clothing, personal items.</div></div><p>Under traditional CL, marriages were <strong>neither in community nor out of community of property</strong>. The husband controlled everything, held in trust.</p><h3>What the RCMA Changed</h3><ul><li><strong>s7(1):</strong> Old CL marriages (before 15 Nov 2000) — governed by customary law</li><li><strong>s7(2):</strong> New CL marriages (after 15 Nov 2000) — automatically <strong>in community of property</strong></li></ul><h3>Gumede 2009 — The Monogamous Fix</h3><p>Lindiwe married Sipho in 2015. Old rule said: governed by CL → husband controls everything. The CC in <em>Gumede v President RSA (2009)</em> declared s7(1) <strong>unconstitutional for monogamous CL marriages</strong>. Old monogamous marriages now also in community of property. Plus: courts have discretion to distribute assets equitably on divorce.</p><h3>Ramuhovhi 2018 — The Polygynous Fix</h3><p><em>Ramuhovhi v President RSA (2018 CC)</em>: old property rules for <strong>polygynous</strong> CL marriages also declared unconstitutional.</p><h3>RCMAA 2021 — The Legislative Fix</h3><ul><li>Spouses have <strong>joint and equal ownership</strong> and management of marital property</li><li><strong>House property</strong> — managed by husband AND that wife, jointly</li><li><strong>Family property</strong> — managed by husband AND ALL wives, jointly</li><li>Each spouse retains exclusive rights over personal property</li></ul><div class="callout">⭐ Gumede + Ramuhovhi + RCMAA 2021 = the three pillars of matrimonial property reform. Know all three as a connected story.</div>` },
+
+  { id:'ch6', label:'Chapter 6', title:'When the Marriage Breaks Down', subtitle:'Dissolution of Customary Marriage', color:'#ef4444',
+    content:`<p>Sipho and Nomsa's marriage falls apart. She tells her lawyer: "I want a divorce."</p><h3>Divorce Under Traditional CL</h3><p>Extrajudicial — state not involved. The families that negotiated the marriage negotiated the divorce. Fault mattered because the return of lobolo depended on it. Men often needed no reason. Women needed very good grounds. Father had absolute custody of children if lobolo was paid.</p><h3>Divorce Under the RCMA</h3><div class="value-card"><div class="value-num">s8(1)</div><div>CL marriage dissolved ONLY by <strong>court decree of divorce</strong>. Ground: <strong>irretrievable breakdown</strong>.</div></div><div class="value-card"><div class="value-num">s8(2)</div><div>Court satisfied that marriage has disintegrated with no reasonable prospect of restoration of a normal marriage.</div></div><div class="value-card"><div class="value-num">s8(3)</div><div>Divorce Act s6 + Mediation Act apply — court cannot grant divorce without ensuring welfare of minor children.</div></div><div class="value-card"><div class="value-num">s8(4)</div><div>Court has wide powers to distribute assets equitably. Applies regardless of whether married before or after RCMA (Gumede settled this).</div></div><div class="value-card"><div class="value-num">s8(5)</div><div>Nothing prevents traditional leaders from mediating disputes <em>before</em> formal court proceedings.</div></div><h3>Children</h3><p>Test: <strong>best interests of the child</strong> (s28(2) Constitution; Children's Act). A toddler stays with her mother — no court orders otherwise regardless of lobolo status. CL children equated to civil law children.</p><h3>Maintenance</h3><p>Traditional CL: none — woman returns to father's house. RCMA: Divorce Act s7 applies → court may order maintenance against a spouse.</p><div class="callout">💡 Traditional CL: extrajudicial, family-controlled, fault-based, lobolo-centred. RCMA: court-controlled, irretrievable breakdown only, civil law framework. This shift is exactly why the question "does the RCMA recognise a customary or civil marriage" is so powerful.</div>` },
+
+  { id:'ch7', label:'Chapter 7', title:'The Death of Baba Dlamini', subtitle:'Succession and Inheritance — Lecture 10', color:'#1d4ed8',
+    content:`<p><strong>Baba Dlamini has died.</strong> Three wives. Eleven children. No will. Who inherits?</p><h3>CL vs Common Law Succession</h3><div class="value-card"><div class="value-num">⚖️</div><div><strong>Common law:</strong> divides property. Liabilities paid first. If debts exceed assets — beneficiaries get nothing. No succession to status.</div></div><div class="value-card"><div class="value-num">🏛️</div><div><strong>CL succession:</strong> succession to <em>status</em>. The heir becomes the new head of household. Inherits cattle AND responsibilities — to maintain all dependants, pay debts. Even if debts exceed assets, the heir tries to honour them. This is <strong>universal succession</strong>.</div></div><h3>General Principles</h3><ul><li><strong>Male primogeniture</strong> — eldest son of first house inherits</li><li>General successor (general estate) vs Special successor (specific house)</li><li>Succession to status ONLY on death of family head</li><li>Succession is a duty — cannot be ceded</li><li>Universal succession — benefits AND debts</li></ul><h3>The Daughters: Left Out</h3><p>Zanele and Thandi — educated, working in Cape Town — but under male primogeniture: they inherit nothing. Not one cow. This is what the Constitution's equality clause challenged.</p><h3>⭐ THE BHE CASE (2005 CC) — Know Everything</h3><p><strong>Facts:</strong> Two minor daughters of deceased partner excluded by s23 BAA. His father claimed the house under male primogeniture, leaving the children with nothing. Shibi: sister of deceased excluded in favour of distant male cousins.</p><p><strong>Majority (Langa DCJ):</strong></p><ul><li>s23 BAA + Regulations = <strong>unconstitutional</strong> (violated ss9(3), 10, 28 Constitution)</li><li>Male primogeniture in current application = <strong>unconstitutional and invalid</strong></li><li>Intestate Succession Act now governs all estates → daughters inherit</li></ul><p><strong>Minority (Ngcobo J):</strong></p><ul><li>Develop, don't strike down. Remove the word "male" — eldest daughter can succeed</li><li>This preserves the value (care for dependants) while complying with BoR</li></ul><div class="callout">📝 <strong>Actual exam question from your slides:</strong> "Compare and contrast courts' approaches to male primogeniture in Mthembu v Letsela and Bhe. (10 marks) + Impact of Constitution on CL succession (10 marks) + Your own opinion (5 marks)."</div><h3>Reform of Customary Law of Succession Act 11 of 2009 (RCLSA)</h3><ul><li>Extended ISA to all persons formally</li><li><strong>"Discarded spouses" s7:</strong> Women whose CL marriages were voided by later civil marriages (1929–1988) retrospectively revived — they inherit equally</li><li><strong>Woman-to-woman marriages s2(1)(c):</strong> treated as descendants for succession purposes</li><li><strong>Sororate unions:</strong> recognised for succession purposes</li></ul>` },
+
+  { id:'ch8', label:'Chapter 8', title:'Who Rules the Village?', subtitle:'Traditional Leadership — Week 10', color:'#0d9488',
+    content:`<p>The old chief has died. His daughter <strong>Nomvula</strong> is widely regarded as the better leader. His son <strong>Buyani</strong> is aggressive and distrusted. The community wants Nomvula. But traditional law says the eldest son inherits the chieftaincy. This exact scenario played out in real life.</p><h3>⭐ Shilubana v Nwamitwa (2009 CC)</h3><p>In the Valoyi community in Limpopo, the Hosi died in 1968 without a male heir. His daughter Ms Shilubana was passed over. In 1996 and 2001, Valoyi traditional authorities passed resolutions: we appoint Ms Shilubana as Hosi — correcting our past gender discrimination. When Hosi Richard died in 2001, his son challenged her appointment.</p><p><strong>CC ruled for Shilubana:</strong></p><ul><li>Traditional communities have the power to develop their own CL</li><li>Courts should respect a community's right to self-correct discriminatory practices</li><li>The provincial government had approved the decision — legitimate process followed</li></ul><p><strong>Result:</strong> Women can be traditional leaders. Communities can develop their own CL without a court order.</p><h3>Traditional and Khoi-San Leadership Act 2019 (TKLA)</h3><p>⚠️ <strong>CRITICAL EXAM FACT:</strong> The TKLA was declared <strong>invalid</strong> in <em>Mogale v Speaker of the National Assembly</em> — Parliament failed to allow proper public participation. Declaration suspended to <strong>29 May 2027</strong>. TKLA operates for now but is on borrowed time.</p><div class="value-card"><div class="value-num">s2(1)</div><div>Traditional institutions must transform and adapt CL to comply with BoR — prevent discrimination, promote equality, advance gender representation in leadership succession.</div></div><div class="value-card"><div class="value-num">s3(4)</div><div>Traditional community recognition: (a) system of TL at senior level recognised by others; (b) observes CL; (c) distinct with proven history; (d) specific geographical area; (e) distinctive cultural heritage; (f) headmanship/headwomanship where applicable.</div></div><div class="value-card"><div class="value-num">s9(1)</div><div>Removal of TL if: declared mentally unfit · no longer resides in area · removed under code of conduct · transgressed CL on grounds warranting withdrawal · court orders it.</div></div>` },
+
+  { id:'ch9', label:'Chapter 9', title:'The Village Court', subtitle:'Traditional Courts Act — Week 11', color:'#7c3aed',
+    content:`<p>Bongani stole five of Baba Dlamini's cattle. The family wants traditional justice — not a backlogged, expensive, English-language High Court.</p><h3>How Traditional Courts Worked Before State Regulation</h3><p>Not a formal Western court. When there was a dispute, the family tried first. If not resolved — neighbours, ward leader, then chief. The chief did not act as judge — he <strong>chaired a meeting</strong>. All adult community members could speak. Decisions by consensus. Goal: <strong>reconciliation</strong>, not punishment. No prisons in precolonial Africa.</p><p>BAA s3(1) made women's exclusion official — only "adult male members of the tribe" could participate. A colonial distortion.</p><h3>Traditional Courts Act 9 of 2022 (TCA)</h3><p>⚠️ Signed September 2023. <strong>NOT yet operational</strong> — regulations still being finalised. BAA applies in practice.</p><p><strong>Definition:</strong> "A customary institution or structure, which is constituted and functions in terms of customary law and custom, for purposes of resolving disputes, in accordance with constitutional imperatives and this Act."</p><div class="value-card"><div class="value-num">s7(7)</div><div>Both parties must be present. Full participation by all interested parties. No discrimination on s9(3) grounds.</div></div><div class="value-card"><div class="value-num">s7(8)</div><div>Customary law of procedure and evidence applies — not the civil Evidence Act.</div></div><div class="value-card"><div class="value-num">s7(9-10)</div><div>Language most widely spoken in the area. Interpreter if a party does not understand.</div></div><p>⚖️ <strong>Choice of forum:</strong> Parties may exit the traditional court at any time and go directly to police or magistrate's court.</p><h3>Advantages vs Disadvantages of the TCA</h3><div class="value-card"><div class="value-num">✅</div><div><strong>Advantages:</strong> Uniform regulation — reduces arbitrariness and corruption. Provides resources — enhances access to justice. Protects parties' rights — no s9(3) discrimination.</div></div><div class="value-card"><div class="value-num">❌</div><div><strong>Disadvantages:</strong> Uniform regulation may rigidify flexible CL. Turns traditional courts into state courts — cements CL's subordination to state law. Destroys the spirit of indigenous dispute resolution.</div></div><div class="callout">📌 The TCA shows the central tension of the whole module: the state trying to regulate something that is inherently self-regulating and community-driven. Regulation = control = loss of indigenous character.</div>` },
+
+  { id:'ch10', label:'Chapter 10', title:'The Last Deal', subtitle:'Contracts Under Customary Law — Week 12', color:'#d97706',
+    content:`<p>Bongani asks Sipho: <em>"Let me borrow some of your cattle. I will use them to make a living. Any calves they produce — you keep. I just need the use of the herd for two years."</em> Sipho's family recognises this immediately. It is the <strong>mafisa contract</strong> — one of the oldest forms of contract in African customary law.</p><h3>Nature of Precolonial Contracts</h3><ul><li><strong>Oral</strong> — not written; your word was your bond</li><li><strong>Group-based</strong> — contracts involved families, not just individuals</li><li><strong>Executed by barter</strong> — exchange of goods for goods</li><li><strong>Based on conscience, trust, and communal need</strong></li><li><strong>Religious elements</strong> — disputes settled with oracles</li></ul><h3>Contemporary Contracts: Elements</h3><p>Offer + Acceptance + Consideration + Intention to create a binding agreement. Capacity: anyone 18+ (Constitution + s6 RCMA + equality).</p><h3>The Five Key Customary Contracts</h3><div class="value-card"><div class="value-num">💍</div><div><strong>Bridewealth (Lobolo)</strong> — Agreement between prospective husband's family head AND bride's family head to give property in consideration of CL marriage. NOT a sale of a woman. NOT an express RCMA requirement, but implied by s3(1)(b). On divorce: husband may demand return depending on fault.</div></div><div class="value-card"><div class="value-num">🤲</div><div><strong>Ukufakwa</strong> — Father requests relative to contribute to ceremonial expenses for his daughter. Creates a debt repaid from daughter's future lobolo.</div></div><div class="value-card"><div class="value-num">👥</div><div><strong>Ukwenzelela</strong> — Man/family head requests relatives to contribute towards his/son's lobolo. Contributors repaid from first daughter's lobolo received.</div></div><div class="value-card"><div class="value-num">👶</div><div><strong>Isondlo</strong> — Debt when someone other than the natural guardian raises a child. Must be settled before natural guardian can claim parental rights or lobolo from the child.</div></div><div class="value-card"><div class="value-num">🐄</div><div><strong>Mafisa contract</strong> — Owner of cattle gives the USE of cattle to a cattle-less person. Owner retains ownership of cattle AND all progeny (calves). A precolonial form of social welfare.</div></div><div class="callout">🔮 <strong>Future of CL contracts:</strong> Since CL must be developed per the BoR, judges may change these rules. The family head's influence is diminishing. Capacity has expanded. The group-based nature is fading with urbanisation. CL contracts are evolving — courts will shape that evolution.</div>` },
+
+  { id:'epilogue', label:'Epilogue', title:'What Happened to the Dlaminis', subtitle:'The Big Argument + Final Thoughts', color:'#1a1a1a',
+    content:`<p><strong>Zanele</strong> finished her LLB at UWC. She argues: the solution is not to replace CL with civil law, and not to preserve CL in its discriminatory form — but to let CL develop from within, guided by its own foundational values, in genuine dialogue with constitutional principles. Not jurispathic. Not paralysed. <em>Living.</em></p><p><strong>Sipho</strong> divorced Nomsa. The house was split in community of property. He pays maintenance for the children. He is still technically married to Lindiwe in Limpopo — that situation remains unresolved.</p><p><strong>Nomvula</strong> became the chief, winning on Shilubana grounds. She is transforming the traditional council — including women as full members, mediating disputes in the spirit of Ubuntu before they reach any court.</p><p><strong>Bongani</strong> repaid his debt through the mafisa arrangement. Reintegrated into the community. No prison sentence. No criminal record. Just restored relationships — which is what indigenous dispute resolution was always about.</p><p>The <strong>Dlamini homestead</strong>: Lungisa still lives there and cares for his mothers. He does it not because the law requires it now. He does it because of <strong>Ubuntu</strong>. Because a person is a person through other persons. Because the ancestors are watching.</p><h3>The Big Argument — Sum It Up</h3><div class="value-card"><div class="value-num">🌍</div><div><strong>State law</strong> = industrial, individual, Western, imposing constitutional values on indigenous communities</div></div><div class="value-card"><div class="value-num">🏡</div><div><strong>Indigenous law</strong> = agrarian, communal, African, seeking to maintain family welfare and ancestral continuity</div></div><div class="value-card"><div class="value-num">⚡</div><div><strong>The conflict</strong> = two completely different ways of organising human society, not just a rights dispute</div></div><div class="value-card"><div class="value-num">🌐</div><div><strong>Universalism</strong> = BoR as yardstick for CL; judges apply it without engaging indigenous values; Diala: same as repugnancy clause in new clothes</div></div><div class="value-card"><div class="value-num">🌿</div><div><strong>Cultural relativism</strong> = understand norms in their context first; CL made sense in agrarian settings; dissonance with modern conditions is the real problem</div></div><div class="value-card"><div class="value-num">⚖️</div><div><strong>Jurispathic</strong> = Diala's word; judges destroy indigenous meaning by forcing CL through a constitutional sieve without asking <em>why</em> the rule existed</div></div><div class="callout">💬 <em>"You are not learning this for the exam. You are learning this for the people this law is about — the families, the wives, the daughters, the communities whose lives are shaped by these rules every single day."</em></div>` }
+];
+
+// ─── CASE DATA ───
+const cases = [
+  { name:"Bhe v Magistrate, Khayelitsha", citation:"2005 (1) BCLR 1 (CC)", topic:"Succession", importance:"highest",
+    summary:`<h3>Bhe and Others v Magistrate, Khayelitsha</h3><p class="citation">2005 (1) BCLR 1 (CC) | Constitutional Court</p><h4>Facts</h4><p><strong>Bhe:</strong> Ms Bhe's deceased partner's father claimed the family house under s23 BAA and male primogeniture. The couple's two minor daughters were left with nothing. <strong>Shibi:</strong> Ms Shibi's brother died intestate — distant male cousins inherited everything, excluding his actual sister who cared for him.</p><h4>Issues</h4><p>1. Constitutional validity of s23 BAA. 2. Constitutional validity of male primogeniture in CL succession.</p><h4>Majority (Langa DCJ)</h4><ul><li>s23 BAA + Regulations = <strong>unconstitutional</strong> — violated ss9(3), 10, 28 Constitution</li><li>Rule of male primogeniture in current application = <strong>unconstitutional and invalid</strong></li><li>s1(4)(b) Intestate Succession Act = also unconstitutional</li><li>Intestate Succession Act now governs all estates — daughters inherit</li></ul><h4>Minority (Ngcobo J)</h4><ul><li>Courts should <em>develop</em> CL, not strike it down</li><li>Remove the word "male" — allow eldest daughter to succeed in absence of sons</li><li>Preserves foundational value while complying with BoR</li></ul><h4>Significance</h4><p>Most important CL case in SA legal history. Abolished CL of intestate succession as codified in the BAA. Overturned effect of Mthembu v Letsela.</p>` },
+
+  { name:"Shilubana v Nwamitwa", citation:"2009 (2) SA 66 (CC)", topic:"Traditional Leadership", importance:"highest",
+    summary:`<h3>Shilubana and Others v Nwamitwa and Others</h3><p class="citation">2008 (9) BCLR 914 (CC); 2009 (2) SA 66 (CC) | Constitutional Court</p><h4>Facts</h4><p>Valoyi community (Limpopo). Hosi died in 1968 without male heir — daughter Ms Shilubana passed over. After the 1996 Constitution, Valoyi authorities passed resolutions appointing her as Hosi to correct past gender discrimination. Her cousin's son (Mr Nwamitwa) challenged her, claiming he was the rightful heir as Richard's eldest son.</p><h4>Held</h4><ul><li>Ruled in favour of Ms Shilubana</li><li>Traditional communities have the power to develop their own CL</li><li>Courts should respect a community's right to self-correct discriminatory practices</li><li>The provincial government had approved the decision — legitimate process</li></ul><h4>Significance</h4><ul><li>Women CAN be traditional leaders under SA law</li><li>Communities can develop their own CL without waiting for a court</li><li>Confirms CL as important and independent — but must accord with the Constitution</li></ul>` },
+
+  { name:"Gumede v President of RSA", citation:"2009 (3) SA 152 (CC)", topic:"Matrimonial Property", importance:"highest",
+    summary:`<h3>Gumede (born Shange) v President of the Republic of South Africa</h3><p class="citation">CCT 50/08 [2008] ZACC 23; 2009 (3) BCLR 243 (CC) | Constitutional Court</p><h4>Facts</h4><p>Mrs Gumede married under CL before the RCMA came into force. On divorce, s7(1) RCMA said her marriage was governed by customary law — husband controlled property. She had nothing despite contributing throughout the marriage.</p><h4>Held</h4><ul><li>s7(1) as applied to <strong>monogamous</strong> CL marriages = <strong>unconstitutional</strong></li><li>Old monogamous CL marriages now treated as in community of property</li><li>Every divorce court has discretion to distribute assets equitably — considering how property was acquired, controlled, and used</li></ul><h4>Significance</h4><ul><li>Gave women in old monogamous CL marriages equal property rights on divorce</li><li>Applied to monogamous marriages only — Ramuhovhi (2018) extended to polygynous</li></ul>` },
+
+  { name:"Ramuhovhi v President of RSA", citation:"2018 (2) SA 1 (CC)", topic:"Matrimonial Property", importance:"highest",
+    summary:`<h3>Ramuhovhi and Others v President of the Republic of South Africa</h3><p class="citation">CCT194/16 [2017] ZACC 41; 2018 (2) SA 1 (CC) | Constitutional Court</p><h4>Background</h4><p>Gumede (2009) only addressed monogamous CL marriages. Wives in old polygynous CL marriages were still governed by old, unfair customary rules.</p><h4>Held</h4><ul><li>s7(1) as applied to <strong>polygynous</strong> CL marriages = <strong>unconstitutional and invalid</strong></li><li>Wives in polygynous old CL marriages now have equal property rights</li></ul><h4>Significance</h4><ul><li>Completed the property reform begun in Gumede</li><li>Led directly to the RCMA Amendment Act 2021 — joint and equal ownership and management of marital property for all CL marriages</li></ul>` },
+
+  { name:"MM v MN (Mayelane v Ngwenyama)", citation:"2013 (4) SA 415 (CC)", topic:"Customary Marriage — RCMA", importance:"highest",
+    summary:`<h3>MM v MN; Mayelane v Ngwenyama and Another</h3><p class="citation">2013 (4) SA 415 (CC); 2013 (8) BCLR 918 (CC) | Constitutional Court</p><h4>Facts</h4><p>Mr Ngwenyama (Tsonga man) married Mrs Mayelane as first customary wife. Without her knowledge or consent, he married a second woman, Mrs Ngwenyama. On his death, both claimed to be his lawful widow.</p><h4>Issues</h4><ol><li>Does first wife's consent constitute a requirement for validity of a second CL marriage among the Tsonga?</li><li>Does s7(6) RCMA failure invalidate a polygynous marriage?</li></ol><h4>Held</h4><ul><li><strong>First wife's consent:</strong> Among Tsonga, living CL requires first wife's consent for a second marriage. Without it, the second marriage is invalid. (Community-specific — not universal across all groups)</li><li><strong>s7(6):</strong> Failure to comply does NOT invalidate the marriage. S7(6) deals with property consequences only, not validity.</li></ul><h4>Significance</h4><ul><li>Living CL (not official CL) governs marriage requirements</li><li>First wife's consent can be a validity requirement in certain communities</li><li>Wives should not be penalised for their husband's inaction by having their marriages declared invalid</li></ul>` },
+
+  { name:"Mabena v Letsoalo", citation:"1998 (2) SA 1068 (T)", topic:"Customary Marriage — RCMA", importance:"high",
+    summary:`<h3>Mabena v Letsoalo</h3><p class="citation">1998 (2) SA 1068 (T) | Transvaal Provincial Division</p><h4>Facts</h4><p>A mother (not the bride's father) negotiated and received lobolo for her daughter's customary marriage. Was this departure from tradition fatal to the marriage's validity?</p><h4>Held</h4><ul><li>The marriage was <strong>valid</strong></li><li>CL is flexible — the core is that lobolo negotiations took place, not who specifically conducted them</li><li>A mother can legally negotiate and receive lobolo</li></ul><h4>Significance</h4><ul><li>Landmark case on flexibility of the s3(1)(b) requirement</li><li>Demonstrates CL adapts to modern family structures (single-parent households)</li><li>Most cited case on lobolo and "negotiated in accordance with CL"</li></ul>` },
+
+  { name:"Tsambo v Sengadi", citation:"[2020] ZASCA 46", topic:"Customary Marriage — RCMA", importance:"high",
+    summary:`<h3>Tsambo v Sengadi</h3><p class="citation">[2020] ZASCA 46 | Supreme Court of Appeal</p><h4>Facts</h4><p>Couple lived together in Johannesburg as a customary married couple without a formal handing-over (integration) ceremony. On the husband's death, his family disputed the validity of the marriage — no bride was formally handed over.</p><h4>Held</h4><ul><li>Handing-over ceremony is <strong>relevant</strong> but NOT an absolute requirement for all communities</li><li>Courts must look at substance, not tick a formal box</li><li>CL varies between communities — understand the social context</li></ul><h4>Significance</h4><ul><li>Confirmed flexible, living nature of s3(1)(b)</li><li>Important for urban couples who conduct CL marriages without full traditional ceremonies</li><li>Read with Mbungela v Mkabi (same year)</li></ul>` },
+
+  { name:"Mbungela v Mkabi", citation:"2020 (1) SA 41 (SCA)", topic:"Customary Marriage — RCMA", importance:"high",
+    summary:`<h3>Mbungela and Another v Mkabi and Others</h3><p class="citation">2020 (1) SA 41 (SCA) | Supreme Court of Appeal</p><h4>Held</h4><ul><li>Formal integration (handing over of bride) is <strong>not required for all communities</strong></li><li>CL varies — what is required in one community may not be required in another</li><li>Courts must assess the specific practices of the community concerned</li></ul><h4>Significance</h4><ul><li>Confirms CL is community-specific and cannot be reduced to a single national rule</li><li>Raises the question: can the doctrine of precedent apply when CL varies by community?</li><li>Read with Tsambo v Sengadi as the key 2020 SCA cases on s3(1)(b)</li></ul>` },
+
+  { name:"Manwadu v Manwadu", citation:"[2025] 2 All SA 27 (SCA)", topic:"Customary Marriage — RCMA", importance:"high",
+    summary:`<h3>Manwadu v Manwadu and Others</h3><p class="citation">[2025] 2 All SA 27 (SCA); 2025 (3) SA 410 (SCA) | Supreme Court of Appeal</p><h4>Issue</h4><p>Is registration a requirement for the validity of a customary marriage under the RCMA?</p><h4>Held</h4><ul><li>Registration is <strong>NOT a requirement for validity</strong></li><li>s4 RCMA provides for registration as an administrative process only</li><li>An unregistered customary marriage is still fully valid and legally recognised</li></ul><h4>Significance</h4><ul><li>Very recent case (2025) — specifically prescribed by your lecturer</li><li>Dispels the common misconception that registration = validity</li><li>Confirmed also in EMK v EMB [2025] ZAGPPHC 289</li></ul>` },
+
+  { name:"Mashisane v Mhlauli", citation:"[2023] ZASCA 176", topic:"Customary Marriage — RCMA", importance:"high",
+    summary:`<h3>Mashisane v Mhlauli</h3><p class="citation">(903/2022) [2023] ZASCA 176 | Supreme Court of Appeal</p><h4>Issue</h4><p>Can a spouse in an existing customary marriage conclude a valid civil marriage with another person?</p><h4>Held</h4><ul><li><strong>No.</strong> s3(2) read with s10(4) RCMA prohibits this</li><li>Any civil marriage concluded while a valid CL marriage subsists = void</li></ul><h4>Significance</h4><ul><li>Confirms RCMA protects the primacy of the CL marriage</li><li>Prevents the old practice of using a civil marriage to effectively void an existing CL marriage</li><li>Recent case (2023) — specifically prescribed by your lecturer</li></ul>` },
+
+  { name:"Mabuza v Mbatha", citation:"2003 (4) SA 218 (C)", topic:"Customary Marriage — RCMA", importance:"high",
+    summary:`<h3>Mabuza v Mbatha</h3><p class="citation">2003 (4) SA 218 (C) | Cape Provincial Division</p><h4>Facts</h4><p>A Swazi customary marriage was in dispute. The woman had been taken to the man's family home. Was the manner of integration sufficient?</p><h4>Held</h4><ul><li>The integration was sufficient</li><li>Handing over is NOT an absolute requirement across all communities</li><li>Substance of the integration process matters — not a single rigid ceremonial act</li></ul><h4>Significance</h4><ul><li>Early case establishing flexibility of the integration requirement under s3(1)(b)</li><li>Often cited alongside Tsambo and Mbungela as the trio of key integration cases</li></ul>` },
+
+  { name:"Mthembu v Letsela", citation:"2000 (3) SA 867 (SCA)", topic:"Succession", importance:"high",
+    summary:`<h3>Mthembu v Letsela and Another</h3><p class="citation">2000 (3) SA 867 (SCA) | Supreme Court of Appeal</p><h4>Facts</h4><p>A woman claimed inheritance rights on behalf of her illegitimate daughter. The estate was claimed by the deceased's father under male primogeniture via s23 BAA and Regulation R200.</p><h4>Held</h4><ul><li>SCA <strong>upheld male primogeniture</strong></li><li>Limitation was justifiable under s36 of the Constitution</li><li>Courts should <em>develop</em> the rule rather than strike it down</li></ul><h4>Significance</h4><ul><li>Pre-Bhe position — overturned in effect by the CC in Bhe (2005)</li><li>Represents the "development" approach (the Bhe minority agreed with this approach)</li><li>Exam: specifically asked to compare and contrast Mthembu with Bhe</li></ul>` },
+
+  { name:"Alexkor v Richtersveld Community", citation:"2003 (12) BCLR 1301 (CC)", topic:"Recognition of CL", importance:"high",
+    summary:`<h3>Alexkor Ltd and Another v Richtersveld Community and Others</h3><p class="citation">2003 (12) BCLR 1301 (CC) | Constitutional Court</p><h4>Key Paragraphs 51–53</h4><ul><li>Indigenous law is now an <strong>integral part of our law</strong> and an <strong>original source</strong> of SA law</li><li>Its ultimate force and validity depends on the Constitution, not the common law</li><li>Courts are obliged to apply it when applicable — but subject to the Constitution and legislation</li><li>Indigenous law is not a fixed body of rules — it evolves as people change their norms and patterns</li></ul><h4>Significance</h4><ul><li>Elevated indigenous law to an independent source of SA law — not inferior to common law</li><li>But simultaneously subjected it to the Constitution — the tension at the heart of the module</li><li>The Court acknowledged "the tendency to view indigenous law through the prism of legal conceptions that are foreign to it" — and then proceeded to do that anyway (Diala's critique)</li></ul>` },
+
+  { name:"Moseneke v The Master", citation:"2001 (2) SA 18 (CC)", topic:"Succession", importance:"medium",
+    summary:`<h3>Moseneke and Another v The Master and Another</h3><p class="citation">2001 (2) SA 18 (CC) | Constitutional Court</p><h4>Held</h4><ul><li>s23(7)(a) BAA and Regulation 3(1) = unfair discrimination on grounds of race, ethnic origin, and colour</li><li>Not reasonable and justifiable in an open and democratic society</li><li>Declared unconstitutional</li></ul><h4>Significance</h4><ul><li>Early attack on the BAA's racially discriminatory succession provisions</li><li>Paved the way for the comprehensive Bhe judgment</li><li>Showed that having magistrates (not the Master) administer Black estates was an apartheid-era racial classification with no constitutional justification</li></ul>` },
+
+  { name:"Mogale v Speaker of the National Assembly", citation:"CC — TKLA Invalidity", topic:"Traditional Leadership", importance:"high",
+    summary:`<h3>Mogale v Speaker of the National Assembly</h3><p class="citation">Constitutional Court | Traditional and Khoi-San Leadership Act Invalidity</p><h4>Held</h4><ul><li>TKLA 3 of 2019 declared <strong>invalid</strong> — Parliament failed to allow proper public participation</li><li>Declaration of invalidity <strong>suspended</strong> — Parliament must enact new legislation by <strong>29 May 2027</strong></li><li>TKLA continues to operate for now, but is on borrowed time</li></ul><h4>Significance</h4><ul><li>Critical exam fact about the current status of traditional leadership law in SA</li><li>If Parliament fails to enact new legislation by 2027, the TKLA falls away</li><li>Illustrates the constitutional requirement of public participation in legislation affecting traditional communities</li></ul>` },
+
+  { name:"State v Dalindyebo", citation:"Traditional Courts — Jurisdiction", topic:"Traditional Courts", importance:"medium",
+    summary:`<h3>State v Dalindyebo</h3><p class="citation">Traditional Courts — Jurisdiction and Punishment</p><h4>Facts</h4><p>The king of the abaThembu (Dalindyebo) was convicted in state courts for grievous punishments he imposed on community members. He had tried them in his traditional court for serious offences (murder, rape, robbery) and imposed corporal punishments.</p><h4>Significance</h4><ul><li>Traditional authority cannot claim jurisdiction over serious criminal offences in this manner</li><li>Even the highest traditional authority is subject to state law — the king is not above the Constitution</li><li>Cited as an example of why regulation of traditional courts is necessary</li><li>Demonstrates that CL courts can devolve into arbitrary punishment if not properly regulated</li></ul>` },
+
+  { name:"S v Makwanyane", citation:"1995 (3) SA 391 (CC)", topic:"Ubuntu — Foundational Values", importance:"medium",
+    summary:`<h3>S v Makwanyane and Another</h3><p class="citation">1995 (3) SA 391 (CC) | Constitutional Court</p><h4>Relevance to CUS311</h4><p>This famous death penalty case is relevant for one specific reason: the CC affirmed <strong>Ubuntu as a constitutional value</strong> akin to human dignity.</p><h4>Ubuntu in the Judgment</h4><ul><li>Ubuntu — a person is a person through other persons — held to be consistent with and supportive of constitutional values of human dignity, equality, and freedom</li><li>Described as "the ethos of an instinctive capacity for and enjoyment of love towards our fellow men and women"</li></ul><h4>Significance for CUS311</h4><ul><li>Confirms Ubuntu is not merely cultural — it has legal, constitutional weight</li><li>Bridges indigenous values and constitutional values</li><li>Use this case when discussing foundational values and their constitutional recognition</li></ul>` }
+];
+
+// ─── BUILD CHAPTERS ───
+const chapterList = document.getElementById('chapterList');
+let openChapterId = null;
+let chaptersRead = new Set();
+
+chapters.forEach((ch, idx) => {
+  const card = document.createElement('div');
+  card.className = 'chapter-card';
+  card.id = 'card-' + ch.id;
+  card.style.animationDelay = (idx * 0.04) + 's';
+
+  card.innerHTML = `
+    <div class="chapter-header" onclick="toggleChapter('${ch.id}')">
+      <div class="chapter-num" style="background:${ch.color}">${ch.label.replace(' ','<br>')}</div>
+      <div class="chapter-meta">
+        <div class="chapter-label">${ch.label}</div>
+        <div class="chapter-title">${ch.title}</div>
+        <div class="chapter-subtitle">${ch.subtitle}</div>
+      </div>
+      <div class="chapter-arrow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+    <div class="chapter-body" id="body-${ch.id}">
+      <div class="chapter-body-inner">
+        <div class="tts-controls">
+          <button class="tts-btn" id="listen-${ch.id}" onclick="event.stopPropagation(); readChapter('${ch.id}')">🔊 Listen</button>
+          <button class="tts-btn" onclick="event.stopPropagation(); pauseReading()">⏸ Pause</button>
+          <button class="tts-btn" onclick="event.stopPropagation(); resumeReading()">▶ Resume</button>
+          <button class="tts-btn" onclick="event.stopPropagation(); stopReading()">⏹ Stop</button>
+        </div>
+        ${ch.content}
+      </div>
+    </div>`;
+  chapterList.appendChild(card);
+});
+
+function toggleChapter(id) {
+  const card = document.getElementById('card-' + id);
+  const body = document.getElementById('body-' + id);
+  const isOpen = card.classList.contains('open');
+
+  // Close all
+  document.querySelectorAll('.chapter-card.open').forEach(c => {
+    c.classList.remove('open');
+    c.querySelector('.chapter-body').style.maxHeight = '0';
+  });
+
+  if (!isOpen) {
+    card.classList.add('open');
+    body.style.maxHeight = body.scrollHeight + 'px';
+    chaptersRead.add(id);
+    updateProgress();
+    setTimeout(() => { card.scrollIntoView({ behavior:'smooth', block:'nearest' }); }, 80);
+  }
+}
+
+function updateProgress() {
+  const pct = (chaptersRead.size / chapters.length) * 100;
+  document.getElementById('progressFill').style.width = pct + '%';
+}
+
+// ─── BUILD CASE GRID ───
+const caseGrid = document.getElementById('caseGrid');
+
+function renderCases(filter) {
+  caseGrid.innerHTML = '';
+  cases.forEach(c => {
+    const topicMatch = filter === 'all' || (filter === 'highest' && c.importance === 'highest') || c.topic === filter || c.topic.includes(filter);
+    if (!topicMatch) return;
+
+    const card = document.createElement('div');
+    card.className = `case-card imp-${c.importance}`;
+    card.onclick = () => openCase(c);
+    card.innerHTML = `
+      <div class="case-topic-badge">${c.topic}</div>
+      <div class="case-imp-badge">${c.importance === 'highest' ? '★ Must know' : c.importance === 'high' ? 'High' : 'Know it'}</div>
+      <div class="case-name-text">${c.name}</div>
+      <div class="case-citation-text">${c.citation}</div>`;
+    caseGrid.appendChild(card);
+  });
+}
+
+renderCases('all');
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderCases(btn.dataset.filter);
+  });
+});
+
+// ─── MODAL ───
+function openCase(c) {
+  document.getElementById('modalTitle').textContent = c.topic;
+  document.getElementById('modalBody').innerHTML = c.summary;
+  const overlay = document.getElementById('modalOverlay');
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModalBtn() {
+  const overlay = document.getElementById('modalOverlay');
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeModal(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModalBtn();
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalBtn(); });
+
+// prevent modal content scroll from closing
+document.getElementById('modal').addEventListener('click', e => e.stopPropagation());
+
+// ─── ADMIN GATE ───
+function openAdminGate() {
+  document.getElementById('adminOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => document.getElementById('adminCodeInput').focus(), 300);
+}
+
+function closeAdminGate(e) {
+  if (e && e.target !== document.getElementById('adminOverlay')) return;
+  _closeAdminGate();
+}
+
+function _closeAdminGate() {
+  document.getElementById('adminOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+  document.getElementById('adminCodeInput').value = '';
+  document.getElementById('adminCodeInput').classList.remove('shake');
+  document.getElementById('adminError').textContent = '';
+  document.getElementById('submitBtnText').textContent = 'Unlock';
+  document.getElementById('adminCodeInput').disabled = false;
+  document.querySelector('.admin-submit-btn').disabled = false;
+}
+
+async function submitAdminCode() {
+  const input = document.getElementById('adminCodeInput');
+  const error = document.getElementById('adminError');
+  const btn = document.querySelector('.admin-submit-btn');
+  const btnText = document.getElementById('submitBtnText');
+  const code = input.value.trim();
+
+  if (!code) return;
+
+  // Show loading state
+  btn.disabled = true;
+  input.disabled = true;
+  btnText.textContent = 'Checking...';
+  error.textContent = '';
+
+  try {
+    const response = await fetch('/api/vault', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ code })
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      _closeAdminGate();
+      unlockVault(data.content);
+    } else {
+      // Wrong password
+      input.classList.add('shake');
+      error.textContent = 'Incorrect code. Try again.';
+      input.value = '';
+      btn.disabled = false;
+      input.disabled = false;
+      btnText.textContent = 'Unlock';
+      setTimeout(() => input.classList.remove('shake'), 500);
+      input.focus();
+    }
+  } catch (err) {
+    error.textContent = 'Connection error. Try again.';
+    btn.disabled = false;
+    input.disabled = false;
+    btnText.textContent = 'Unlock';
+  }
+}
+
+function unlockVault(content) {
+  const vault = document.getElementById('vaultSection');
+  const vaultContent = document.getElementById('vaultContent');
+  vaultContent.innerHTML = content;
+  vault.style.display = 'block';
+  setTimeout(() => vault.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+}
+
+function lockVault() {
+  const vault = document.getElementById('vaultSection');
+  vault.style.display = 'none';
+  document.getElementById('vaultContent').innerHTML = '';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function toggleAnswer(id) {
+</script>
+
+<!-- EXAM ASSISTANT MODAL -->
+<div id="examModal" class="exam-modal">
+  <div class="exam-modal-content">
+    <div class="exam-header">
+      <h2>Exam Assistant</h2>
+      <button class="exam-close" onclick="toggleExamAssistant()">✕</button>
+    </div>
+    <div class="exam-body">
+      <div class="exam-panel">
+        <h3>Your Question or Draft</h3>
+        <textarea id="questionInput" class="exam-textarea" placeholder="Paste your exam question, draft answer, or notes here..."></textarea>
+      </div>
+      <div class="exam-panel">
+        <h3>Exam Guidelines</h3>
+        <div class="exam-guidelines">
+          <strong>SECTION A — COMPULSORY (15 marks)</strong>
+          <ul><li>Explain the key issue in the dispute</li><li>Cite ONLY relevant prescribed readings</li><li>Include at least 2 relevant quotations with page numbers</li><li>400–500 words (up to 550 allowed)</li></ul>
+          <strong>SECTION B — FIVE QUESTIONS (7 marks each)</strong>
+          <ul><li>No referencing required</li><li>Base answers on lectures and prescribed readings</li><li>Support opinions with emphasis on lectures</li></ul>
+          <strong>Key Requirements</strong>
+          <ul><li>Use your own ideas and writing style</li><li>Questions are designed to test your thinking</li><li>Reference only when relevant (not for volume)</li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="exam-footer">
+      <button class="exam-btn exam-btn-secondary" onclick="clearExamInput()">Clear</button>
+      <div class="exam-status" id="examStatus"></div>
+      <button class="exam-btn exam-btn-primary" id="generateBtn" onclick="generateAnswer()">Generate Answer Structure</button>
+    </div>
+  </div>
+</div>
+
+<button class="exam-assistant-btn" onclick="toggleExamAssistant()" title="Open Exam Assistant (E)">💡</button>
+
+<script>
+  function toggleExamAssistant() {
+    const modal = document.getElementById('examModal');
+    modal.classList.toggle('active');
+    if (modal.classList.contains('active')) {
+      document.getElementById('questionInput').focus();
+    }
+  }
+
+  function clearExamInput() {
+    document.getElementById('questionInput').value = '';
+    document.getElementById('questionInput').focus();
+  }
+
+  async function generateAnswer() {
+    const question = document.getElementById('questionInput').value.trim();
+    if (!question) {
+      alert('Please enter your question or draft answer first.');
+      return;
+    }
+
+    const btn = document.getElementById('generateBtn');
+    const status = document.getElementById('examStatus');
+
+    btn.disabled = true;
+    status.textContent = 'Generating answer structure...';
+
+    try {
+      const systemPrompt = `You are an expert African Customary Law teaching assistant. You help law students structure and develop their exam answers for CUS311.
+
+Key principles:
+- Encourage the student's own ideas and writing style
+- Point out where to reference prescribed readings (only when relevant)
+- Suggest 2-3 key quotes from the readings they should use
+- Help structure arguments within 400-500 words for Section A
+- For Section B, keep answers concise (7 marks each)
+- Remind them: use own voice, don't over-reference, cite only prescribed materials
+
+Remember: Your job is to guide, not write the answer.`;
+
+      const response = await fetch('/api/exam-assist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question: question, systemPrompt: systemPrompt })
+      });
+
+      if (!response.ok) throw new Error('API request failed');
+      const data = await response.json();
+
+      if (data.error) {
+        status.textContent = `Error: ${data.error}`;
+      } else {
+        document.getElementById('questionInput').value = question + '\n\n--- ANSWER STRUCTURE ---\n\n' + data.answer;
+        status.textContent = 'Answer structure generated. Edit and expand below.';
+      }
+    } catch (err) {
+      status.textContent = `Error: ${err.message}`;
+      console.error(err);
+    } finally {
+      btn.disabled = false;
+    }
+  }
+
+  // Keyboard shortcut (E key)
+  document.addEventListener('keydown', (e) => {
+    if (e.key.toLowerCase() === 'e' && !e.ctrlKey && !e.metaKey) {
+      const input = document.activeElement;
+      if (input.tagName !== 'TEXTAREA' && input.tagName !== 'INPUT') {
+        toggleExamAssistant();
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
